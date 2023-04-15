@@ -11,7 +11,7 @@ public class questao1 {
         numero = scan.nextInt();
 
         while (numero >= 0){
-            if (numero % 2 = 0){
+            if (numero % 2 == 0){
                 somaPares += numero;
             }else{
                 produtoImpares *= numero;

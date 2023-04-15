@@ -8,7 +8,7 @@
 
 import java.util.Scanner;
 
-public class questao1 {
+public class questao3 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         double numero;

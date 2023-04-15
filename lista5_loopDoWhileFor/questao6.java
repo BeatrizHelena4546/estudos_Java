@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class questao1 {
+public class questao6 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int numero1, numero2;
@@ -10,7 +10,7 @@ public class questao1 {
         numero1 = scan.nextInt();
 
         System.out.println("Digite numero 2 : ");
-        numero2 = scan.nextInt;
+        numero2 = scan.nextInt();
 
         if (numero1 < numero2) {
             for (int i = numero1; i <= numero2; i++) {

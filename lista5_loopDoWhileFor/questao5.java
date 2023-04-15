@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class questao1 {
+public class questao5 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         String codigo, senha;
@@ -9,7 +9,7 @@ public class questao1 {
         codigo = scan.nextLine();
 
         System.out.println("Digite sua senha : ");
-        senha = scan.nextLine;
+        senha = scan.nextLine();
 
         while(senha.equals(codigo)){
             System.out.println("ERRO : O senha não pode ser igual ao codigo");
@@ -17,7 +17,7 @@ public class questao1 {
             codigo = scan.nextLine();
 
             System.out.println("Digite sua senha : ");
-            senha = scan.nextLine;
+            senha = scan.nextLine();
        }
 
         System.out.println("Código do usuário: " + codigo);

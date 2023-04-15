@@ -1,13 +1,13 @@
 import java.util.Scanner;
 
-public class questao1 {
+public class questao2 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int numero = 1001;
         int contador = 0;
 
         while(contador < 5){
-            if (numero % 11 = 5){
+            if (numero % 11 == 5){
                 contador++;
             }
 
