@@ -19,5 +19,6 @@ public class questao2 {
 
         }
         System.out.println("O quinto número maior que 1000, cuja divisão por 11 tem resto 5, é : "+ numero);
+        scan.close();
     }
 }

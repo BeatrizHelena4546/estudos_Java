@@ -21,5 +21,6 @@ public class questao3 {
             tabuada = numero * i;
             System.out.println(numero + " x " + i +" = " + tabuada);
         }
+        scan.close();
     }
 }

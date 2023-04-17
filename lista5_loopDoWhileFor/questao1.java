@@ -23,6 +23,6 @@ public class questao1 {
 
         System.out.println("A soma de todos os numeros PARES são : "+somaPares);
         System.out.println("O produto de todos os numeros IMPARES são : "+produtoImpares);
-
+        scan.close();
     }
 }

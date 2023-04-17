@@ -22,5 +22,6 @@ public class questao5 {
 
         System.out.println("Código do usuário: " + codigo);
         System.out.println("Senha do usuário: " + senha);
+        scan.close();
    }
 }

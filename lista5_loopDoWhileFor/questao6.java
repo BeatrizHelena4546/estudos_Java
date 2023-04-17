@@ -25,5 +25,6 @@ public class questao6 {
         }
 
         System.out.println("A soma dos números no intervalo é: " + soma);
+        scan.close();
    }
 }

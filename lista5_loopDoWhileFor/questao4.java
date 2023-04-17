@@ -21,5 +21,7 @@ public class questao4 {
         }
 
         System.out.println(numero + " não é um número triangular!");
+        scan.close();
     }
+    
 }
