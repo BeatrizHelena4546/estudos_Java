@@ -1,0 +1,40 @@
+int clientes,idade;
+int otimo, bom, regular, ruim, 
+pessimo = 0;
+float maiorIdadeOtimo = 0f;
+float maiorIdadeRuim, resultadoMaiorIdade, 
+difPerBomRegular = 0f;
+float percentualBom, percentualRuim, 
+percentualRegular, percentualPessimo, 
+mediaIdadeRuim, maiorIdadePessimo;
+
+case "B":
+++bom;
+case "R":
+++regular;
+case "RR":
+++ruim;
+if (idade > maiorIdadeRuim) {
+maiorIdadeRuim = idade;
+}
+case "P":
+++pessimo;
+if (idade > maiorIdadePessimo) {
+maiorIdadePessimo = idade;
+}
+default:
+System.out.println("Opinião inválida");
+
+        percentualBom = (float)bom/100*100;
+        percentualRegular = (float)regular/100*100;
+        percentualPessimo = (float) pessimo/100*100;
+        mediaIdadeRuim = (float) maiorIdadeRuim/ruim;
+        resultadoMaiorIdade = maiorIdadeOtimo - maiorIdadeRuim;
+        difPerBomRegular = percentualBom - percentualRegular;
+
+
+        System.out.println("Total de quantidade ótimo:" + otimo + "%");
+        System.out.println("Diferença percentual entre respostas boas e regular:" + difPerBomRegular);
+        System.out.println("média de idade das pessoas que responderam ruim:" + mediaIdadeRuim);
+        System.out.println("percentagem de respostas péssimo e a maior idade que utilizou essa opção: " + percentualPessimo + "% /" + maiorIdadePessimo);
+        System.out.println("a diferença de idade entre a maior idade que respondeu ótimo e a maior idade que respondeu ruim: " + resultadoMaiorIdade);
