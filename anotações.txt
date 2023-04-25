@@ -1,40 +1,56 @@
-int clientes,idade;
-int otimo, bom, regular, ruim, 
-pessimo = 0;
-float maiorIdadeOtimo = 0f;
-float maiorIdadeRuim, resultadoMaiorIdade, 
-difPerBomRegular = 0f;
-float percentualBom, percentualRuim, 
-percentualRegular, percentualPessimo, 
-mediaIdadeRuim, maiorIdadePessimo;
+import java.util.Random;
 
-case "B":
-++bom;
-case "R":
-++regular;
-case "RR":
-++ruim;
-if (idade > maiorIdadeRuim) {
-maiorIdadeRuim = idade;
+public class MaiorValorMatriz {
+    public static void main(String[] args) {
+        int[][] matriz = new int[5][5];
+        Random random = new Random();
+
+        // preenche a matriz com valores aleatórios não repetidos
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[0].length; j++) {
+                int num;
+                do {
+                    num = random.nextInt(25) + 1; // gera um número aleatório entre 1 e 25
+                } while (existeNaMatriz(matriz, num)); // repete enquanto o número já existir na matriz
+                matriz[i][j] = num;
+            }
+        }
+
+        // encontra a localização do maior valor na matriz
+        int maiorValor = matriz[0][0];
+        int linhaMaiorValor = 0;
+        int colunaMaiorValor = 0;
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[0].length; j++) {
+                if (matriz[i][j] > maiorValor) {
+                    maiorValor = matriz[i][j];
+                    linhaMaiorValor = i;
+                    colunaMaiorValor = j;
+                }
+            }
+        }
+
+        // imprime a matriz e a localização do maior valor
+        System.out.println("Matriz:");
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[0].length; j++) {
+                System.out.print(matriz[i][j] + " ");
+            }
+            System.out.println();
+        }
+        System.out.println("Maior valor: " + maiorValor);
+        System.out.println("Localização: linha " + (linhaMaiorValor + 1) + ", coluna " + (colunaMaiorValor + 1));
+    }
+
+    // verifica se um número já existe na matriz
+    public static boolean existeNaMatriz(int[][] matriz, int num) {
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[0].length; j++) {
+                if (matriz[i][j] == num) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }
-case "P":
-++pessimo;
-if (idade > maiorIdadePessimo) {
-maiorIdadePessimo = idade;
-}
-default:
-System.out.println("Opinião inválida");
-
-        percentualBom = (float)bom/100*100;
-        percentualRegular = (float)regular/100*100;
-        percentualPessimo = (float) pessimo/100*100;
-        mediaIdadeRuim = (float) maiorIdadeRuim/ruim;
-        resultadoMaiorIdade = maiorIdadeOtimo - maiorIdadeRuim;
-        difPerBomRegular = percentualBom - percentualRegular;
-
-
-        System.out.println("Total de quantidade ótimo:" + otimo + "%");
-        System.out.println("Diferença percentual entre respostas boas e regular:" + difPerBomRegular);
-        System.out.println("média de idade das pessoas que responderam ruim:" + mediaIdadeRuim);
-        System.out.println("percentagem de respostas péssimo e a maior idade que utilizou essa opção: " + percentualPessimo + "% /" + maiorIdadePessimo);
-        System.out.println("a diferença de idade entre a maior idade que respondeu ótimo e a maior idade que respondeu ruim: " + resultadoMaiorIdade);
