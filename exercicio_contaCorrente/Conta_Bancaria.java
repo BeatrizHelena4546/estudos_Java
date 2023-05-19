@@ -1,42 +1,37 @@
 package exercicio_contaCorrente;
 
 public class Conta_Bancaria {
-	protected String nomeCliente;
-	protected String numConta;
-	
-	protected double saldo;
+	private int numero;
+	private double saldo;
+	private boolean especial;
+	private double limite;
 
-	public Conta_Bancaria(String nomeCliente, String numConta, double saldo) {
-		this.nomeCliente = nomeCliente;
-		this.numConta = numConta;
+	public Conta_Bancaria(int numero, double saldo, boolean especial, double limite) {
+		this.numero = numero;
 		this.saldo = saldo;
+		this.especial = especial;
+		this.limite = limite;
 	}
-	
+
 	public void sacar(double valor) {
-		if (valor > 0 && valor <= saldo) {
-			saldo-=valor;
-			System.out.println("Saque realizado com sucesso!");
-		}else {
-			System.out.println("Saldo insuficiente para saque :(");
+		if (valor <= saldo + limite) {
+			saldo -= valor;
+			System.out.println("Saque realizado com sucesso.");
+		} else {
+			System.out.println("Saldo insuficiente.");
 		}
 	}
-	
-	
+
 	public void depositar(double valor) {
-		if(valor > 0) {
-			saldo+=valor;
-			System.out.println("Deposito realizado com sucesso!");
-		}else {
-			System.out.println("Valor invalido para deposito :(");
-		}
+		saldo += valor;
+		System.out.println("Depósito realizado com sucesso.");
 	}
-	
-	public void mostrarDados() {
-        System.out.println("Nome do Cliente: " + nomeCliente);;
-        System.out.println("Número da Conta: " + numConta);
-        System.out.println("Saldo: " + saldo);
-    }
-}
-	
-	
+
+	public void consultarSaldo() {
+		System.out.println("Saldo: " + saldo);
+	}
+
+	public boolean usandoChequeEspecial() {
+		return saldo < 0 && especial;
+	}
 }
