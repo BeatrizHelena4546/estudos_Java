@@ -1,23 +1,27 @@
 package execicio_Lampada;
 
 public class Lampada {
-	String tipo, cor;
-	int potencia;
-	double preco;
-	
-	public Lampada(String tipo, String cor, int potencia, double preco) {
+    private boolean ligada;
+
+    public Lampada(boolean ligada) {
 		super();
-		this.tipo = tipo;
-		this.cor = cor;
-		this.potencia = potencia;
-		this.preco = preco;
+		this.ligada = ligada;
 	}
 
-	public String ligar() {
-		return "Ligada";
-	}
-	
-	public String desligar() {
-		return "Desligada";
-	}
+	public void ligar() {
+        ligada = true;
+    }
+
+    public void desligar() {
+        ligada = false;
+    }
+
+    public void mudarEstado() {
+        ligada = !ligada;
+    }
+
+    public void mostrarEstado() {
+        String estado = ligada ? "ligada" : "desligada";
+        System.out.println("A lampada esta " + estado);
+    }
 }
